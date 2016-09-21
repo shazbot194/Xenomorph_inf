@@ -154,6 +154,9 @@
 /mob/living/carbon/human/stok/New(var/new_loc)
 	..(new_loc, "Stok")
 
+/mob/living/carbon/human/xenomorph/New(var/new_loc)
+	..(new_loc, "xenomorph")
+
 /mob/living/carbon/human/Bump(atom/movable/AM, yes)
 	if(!(yes) || now_pushing || buckled)
 		return 0
