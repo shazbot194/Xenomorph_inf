@@ -6,14 +6,19 @@
 	language = "Xenomorph"
 	tail = "xenos_drone_tail"
 	unarmed_type = /datum/unarmed_attack/punch
+	darksight = 5
 
 	flags = IS_WHITELISTED | NOGUNS | NO_BREATHE
-	dietflags = DIET_OMNI
+	bodyflags = HAS_TAIL | NO_EYES
+	dietflags = DIET_CARN
 	reagent_tag = PROCESS_ORG
+
+	brute_mod = 0.6
+	burn_mod = 3.0
 
 	//default_mutations=list(SKELETON) // This screws things up
 
-	butt_sprite = "plasma"
+	butt_sprite = "xeno"
 
 	breath_type = "plasma"
 
@@ -49,7 +54,31 @@
 		"is scooping out their brains!",
 		"is something!")
 
-/datum/species/plasmaman/say_filter(mob/M, message, datum/language/speaking)
+/datum/species/xenomorph/equip(var/mob/living/carbon/human/H)
+	// Unequip existing suits and hats.
+	H.unEquip(H.wear_glasses)
+
+	H.equip_or_collect(new /glasses=/obj/item/clothing/glasses/xeno(H), slot_wear_glasses)
+
+/obj/item/clothing/mask/gas/golem
+	name = "golem's face"
+	desc = "the imposing face of an adamantine golem"
+	icon_state = "golem"
+	item_state = "golem"
+	unacidable = 1
+	flags = ABSTRACT | NODROP
+
+
+/obj/item/clothing/glasses/xeno
+	name = "xeno eyes"
+	desc = "A thick faceplate that protects from bright lights.."
+	icon_state = "welding-g"
+	item_state = "welding-g"
+	flash_protect = 2
+	flags = ABSTRACT | NODROP
+
+
+/datum/species/xenomorph/say_filter(mob/M, message, datum/language/speaking)
 	if(copytext(message, 1, 2) != "*")
 		message = replacetext(message, "s", stutter("ss"))
 	return message
