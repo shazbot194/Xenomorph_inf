@@ -54,11 +54,20 @@
 		"is scooping out their brains!",
 		"is something!")
 
+/obj/item/clothing/glasses/xeno
+	name = "xeno eyes"
+	desc = "A thick faceplate that protects from bright lights.."
+	icon_state = "welding-g"
+	item_state = "welding-g"
+	flash_protect = 2
+	flags = ABSTRACT | NODROP
+
+
 /datum/species/xenomorph/equip(var/mob/living/carbon/human/H)
 	// Unequip existing suits and hats.
-	H.unEquip(H.wear_glasses)
+	H.unEquip(H.glasses)
 
-	H.equip_or_collect(new /glasses=/obj/item/clothing/glasses/xeno(H), slot_wear_glasses)
+	H.equip_or_collect(new /glasses=/obj/item/clothing/glasses/xeno(H), slot_glasses)
 
 /obj/item/clothing/mask/gas/golem
 	name = "golem's face"
@@ -66,15 +75,6 @@
 	icon_state = "golem"
 	item_state = "golem"
 	unacidable = 1
-	flags = ABSTRACT | NODROP
-
-
-/obj/item/clothing/glasses/xeno
-	name = "xeno eyes"
-	desc = "A thick faceplate that protects from bright lights.."
-	icon_state = "welding-g"
-	item_state = "welding-g"
-	flash_protect = 2
 	flags = ABSTRACT | NODROP
 
 
