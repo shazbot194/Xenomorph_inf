@@ -297,6 +297,18 @@
 	armor = list(melee = 30, bullet = 5, laser = 10, energy = 5, bomb = 50, bio = 100, rad = 50)
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/weapon/storage/bag/ore,/obj/item/weapon/pickaxe)
 
+//Shazbot's Mining rig
+/obj/item/clothing/head/helmet/space/rig/mining/shaz
+	name = "Shazbot's mining hardsuit helmet"
+	desc = "An odd mining suit, looks a little familier."
+	icon_state = "rig0-shaz"
+	item_state = "rig0-shaz"
+
+/obj/item/clothing/suit/space/rig/mining/shaz
+	icon_state = "rig-mining"
+	name = "Shazbot's mining hardsuit"
+	desc = "An odd mining helmit, looks a little familier."
+	item_state = "rig-shaz"
 
 //Syndicate rig
 /obj/item/clothing/head/helmet/space/rig/syndi
