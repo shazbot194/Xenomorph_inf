@@ -67,7 +67,7 @@
 	// Unequip existing suits and hats.
 	H.unEquip(H.glasses)
 
-	H.equip_or_collect(new /glasses=/obj/item/clothing/glasses/xeno(H), slot_glasses)
+	H.equip_or_collect(new /obj/item/clothing/glasses/xeno(H), slot_glasses)
 
 /obj/item/clothing/mask/gas/golem
 	name = "golem's face"
